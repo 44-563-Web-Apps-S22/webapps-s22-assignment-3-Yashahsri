@@ -76,6 +76,26 @@ for any additional equipment opted.</p>
 </tr>
 </table>
 
+<hr>
+<h2>Graphs Traversal/</h2>
+<blockquote>If each vertex in a graph is to be traversed by a tree-based algorithm (such as DFS or BFS), then the algorithm must be called at least once for each connected component of the graph. This is easily accomplished by iterating through all the vertices of the graph, performing the algorithm on each vertex that is still unvisited.
+    <br> <a href="https://en.wikipedia.org/wiki/Graph_traversal">Click for More Info</a></blockquote>
+<pre>
+    procedure BFS(G, v) is
+    create a queue Q
+    enqueue v onto Q
+    mark v
+    while Q is not empty do
+        w ← Q.dequeue()
+        if w is what we are looking for then
+            return w
+        for all edges e in G.adjacentEdges(w) do
+            x ← G.adjacentVertex(w, e)
+            if x is not marked then
+                mark x
+                enqueue x onto Q
+    return null
+</pre>
         <a href="aboutMe.html">GoTo aboutme</a>
         </body>
         
